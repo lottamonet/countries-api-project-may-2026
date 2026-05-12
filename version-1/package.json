@@ -28,8 +28,10 @@
     "rollup": "^4.60.3",
     "vite": "^6.3.5"
   },
-   "engines": {
+  "engines": {
     "node": "18.x"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.60.3"
   }
-  
 }

@@ -56,7 +56,7 @@ if (matched) {
     const storedCountries = localStorage.getItem('savedCountries');
     const storedDeserialized = JSON.parse(storedCountries);
     console.log(storedDeserialized, 'parsed json for saved countries')
-    setSavedCountries(storedDeserialized);
+    setSavedCountries(storedDeserialized || []);
   }, [])
 
   return (

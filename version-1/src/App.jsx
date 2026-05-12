@@ -15,20 +15,20 @@ function App() {
   // light or dark mode
   const [darkMode, setDarkMode] = useState(false);
 // asynchronous api call
-useEffect(() => {
-  async function fetchData() {
-    try {
-      const response = await fetch('https://restcountries.com/v3.1/all');
-      const responseJson = await response.json();
-      console.log(responseJson); 
-      setData(responseJson); 
-    } catch (error) {
-      console.error('Error fetching countries:', error);
-      setData(localData);
-    }
-  }
-  fetchData();
-}, []);
+// useEffect(() => {
+//   async function fetchData() {
+//     try {
+//       const response = await fetch('https://restcountries.com/v3.1/all');
+//       const responseJson = await response.json();
+//       console.log(responseJson); 
+//       setData(responseJson); 
+//     } catch (error) {
+//       console.error('Error fetching countries:', error);
+//       setData(localData);
+//     }
+//   }
+//   fetchData();
+// }, []);
 
   return (
     <div className={darkMode ? 'app dark' : 'app'}>
@@ -51,19 +51,19 @@ useEffect(() => {
       <Routes>
         <Route 
         path="/" 
-        element={<Home data={data} />} 
+        element={<Home data={localData} />} 
         />
         <Route 
         path="/country-detail/:countryName" 
         element={<CountryDetail 
-        data={data}  
+        data={localData}  
         savedCountries={savedCountries} 
         setSavedCountries={setSavedCountries} />}
          />
         <Route
          path="/savedCountries"
-         element={<SavedCountries data={data}
-         allCountries={data} 
+         element={<SavedCountries data={localData}
+         allCountries={localData} 
          savedCountries={savedCountries} 
          setSavedCountries={setSavedCountries}/>} 
          />

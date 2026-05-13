@@ -9,7 +9,7 @@ let sortedCountries = [...countryData].sort((a, b) => a.name.common.localeCompar
 // iterating to create country cards
 let countriesArray = sortedCountries.map((country, i) => (
 <Card 
-imageSrc={country.flags.png} 
+imageSrc={country.flags?.svg || country.flags?.png} 
 imageAlt={country.flags.alt}  
 name={country.name.common} 
 population={country.population.toLocaleString()} 

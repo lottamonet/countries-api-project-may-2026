@@ -9,6 +9,14 @@ function Home({ data }) {
     country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+let regionArray = [];
+const regions = data.forEach(country => {
+  regionArray.push(country.region);
+});
+
+
+updatedRegions = new Set(regionArray);
+
   return (
     <div id="home">
       <div className="search-container">

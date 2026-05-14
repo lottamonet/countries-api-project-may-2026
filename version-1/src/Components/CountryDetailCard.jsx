@@ -13,7 +13,7 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
       ? (
         <div key={borderCode} className="border-country">
           <img
-            src={match.flags?.png}
+            src={match.flags?.svg || match.flags?.png}
             alt={match.flags?.alt || `${match.name.common} flag`}
             className="small-flag"
           />
@@ -28,7 +28,7 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
        <button>Back</button>
        </Link> 
       <div className="detail-card">
-        <img src={country.flags?.png} alt={country.flags?.alt || "Flag"}  className='detail-flag'/>
+        <img src={country.flags?.svg || country.flags?.png} alt={country.flags?.alt || "Flag"}  className='detail-flag'/>
         <div className="detail-infoContainer">
           <p className="detail-name">{country.name.common}</p>
           <button onClick={handleSave} className="heart-button">❤️ Save</button>

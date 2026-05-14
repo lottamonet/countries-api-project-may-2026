@@ -35,6 +35,10 @@
   color: #ffffff;
 }
 
+.app.dark .region-header {
+  color: #ffffff;
+}
+
 .app.dark .theme-toggle  {
   color: #ffffff;
 }
@@ -65,6 +69,21 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* search/filter styles */
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+  align-items: center;
+}
+
+.region-filter {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
 
 
 .theme-toggle {
@@ -184,6 +203,21 @@ body {
 }
 
 /* media queries for Desktop */
+
+@media (min-width: 768px) {
+ /* search/filter styles */
+ .filters {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: 4rem 0 3rem;
+  }
+
+  /* Card resizing */
+  .card {
+    width: 30vw;
+  }
+}
 
 @media (min-width: 900px) {
   /* Grid columns */

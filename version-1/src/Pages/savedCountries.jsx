@@ -40,7 +40,7 @@ const matched = allCountries.find(c => c.name.common.toLowerCase() === form.coun
 if (matched) {
     setSavedCountries((prev) => [...prev, {
     name: matched.name.common,
-    flag: matched.flags?.png
+    flag: matched.flags?.svg || matched.flags?.png
     }]);
 }
   };  
@@ -57,7 +57,7 @@ if (matched) {
     const storedDeserialized = JSON.parse(storedCountries);
     console.log(storedDeserialized, 'parsed json for saved countries')
     setSavedCountries(storedDeserialized || []);
-  }, [])
+  }, [setSavedCountries])
 
   return (
     <div id="savedCountries">

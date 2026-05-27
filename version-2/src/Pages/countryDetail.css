@@ -1,0 +1,28 @@
+.country-detail {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .heart-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .heart-button:hover {
+    background-color: #e84118;
+  }
+
+  .app.dark .detail-infoContainer p {
+    color: #fff;
+}
+
+
+  

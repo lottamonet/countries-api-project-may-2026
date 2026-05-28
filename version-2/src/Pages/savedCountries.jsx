@@ -7,7 +7,7 @@ function SavedCountries({
   setSavedCountries,
 }) {
   // State to hold user profile information
-  const [profileInfo, setProfileInfo] = useState(null);
+  const [profileInfo, setProfileInfo] = useState({});
 
   // Form state to hold user input before submission
   const [form, setForm] = useState({
@@ -16,6 +16,9 @@ function SavedCountries({
     country_name: "",
     bio: "",
   });
+
+  // State to manage loading status
+  const [loading, setLoading] = useState(true);
 
   // Handler to update form state when user types in the input fields
   const handleFormChange = (e) => {
@@ -27,10 +30,12 @@ function SavedCountries({
     try {
       const response = await fetch("/api/get-newest-user");
       const data = await response.json();
-
-      setProfileInfo(data);
+      setProfileInfo(data[0]);
+      console.log("profile info:", data[0]);
     } catch (error) {
       console.error("Error fetching user info:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -109,22 +114,10 @@ function SavedCountries({
   // Handler for form submission that saves user information and the favorite country, then resets the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Capture first name before resetting form state
-    const submittedFirstName = form.name.trim().split(" ")[0];
-
     await saveUserInfo();
-
-    // Update welcome message immediately after submission
-    setProfileInfo({
-      ...form,
-      name: submittedFirstName,
-    });
-
     const matched = allCountries.find(
       (country) =>
-        country.name.common.toLowerCase() ===
-        form.country_name.toLowerCase()
+        country.name.common.toLowerCase() === form.country_name.toLowerCase(),
     );
 
     if (matched) {
@@ -150,9 +143,13 @@ function SavedCountries({
 
   return (
     <div id="savedCountries">
-      {profileInfo?.name ? <h1>Welcome, {profileInfo.name}</h1> : null}
-
-      <h2>My Profile</h2>
+      {loading ? (
+        <p>Loading...</p>
+      ) : profileInfo?.name ? (
+        <h1>Welcome, {profileInfo.name}</h1>
+      ) : (
+        <h2>My Profile</h2>
+      )}
 
       <form onSubmit={handleSubmit} className="form">
         <input
@@ -210,7 +207,7 @@ function SavedCountries({
           const matched = allCountries.find(
             (country) =>
               country.name.common.toLowerCase() ===
-              String(countryName).toLowerCase()
+              String(countryName).toLowerCase(),
           );
 
           return (
@@ -225,9 +222,7 @@ function SavedCountries({
 
                   <span>{matched.name.common}</span>
 
-                  <button
-                    onClick={() => unsaveCountry(matched.name.common)}
-                  >
+                  <button onClick={() => unsaveCountry(matched.name.common)}>
                     Unsave
                   </button>
                 </>

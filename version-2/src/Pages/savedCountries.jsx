@@ -8,7 +8,6 @@ function SavedCountries({
 }) {
   // State to hold user profile information
   const [profileInfo, setProfileInfo] = useState({});
-
   // Form state to hold user input before submission
   const [form, setForm] = useState({
     name: "",
@@ -16,7 +15,6 @@ function SavedCountries({
     country_name: "",
     bio: "",
   });
-
   // State to manage loading status
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +29,6 @@ function SavedCountries({
       const response = await fetch("/api/get-newest-user");
       const data = await response.json();
       setProfileInfo(data[0]);
-      console.log("profile info:", data[0]);
     } catch (error) {
       console.error("Error fetching user info:", error);
     } finally {

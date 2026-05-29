@@ -31,7 +31,7 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
         <img src={country.flags?.svg || country.flags?.png} alt={country.flags?.alt || "Flag"}  className='detail-flag'/>
         <div className="detail-infoContainer">
           <p className="detail-name">{country.name.common}</p>
-          <button onClick={handleSave} className="heart-button">❤️ Save</button>
+          <button onClick={() => handleSave(country.name.common)} className="heart-button">❤️ Save</button>
           <p className="detail-population">Population: {country.population.toLocaleString()}</p>
           <p className="detail-region">Region: {country.region}</p>
           <p className="detial-capital">Capital: {country.capital?.[0]}</p>

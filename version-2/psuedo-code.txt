@@ -28,133 +28,167 @@ This is our WHAT, WHEN, WHERE, HOW framework for working with data:
 
 ==================================
 📊 FORM DATA
-==================================
+============
 
 ========================
 🔶 STORING FORM DATA
-========================
+====================
 
 ❓ WHAT...
-TYPE OF HTTP REQUEST (GET OR POST): ------
-API ENDPOINT: ------
 
-REQUEST BODY DATA TYPE (if applicable): ------
-REQUEST BODY (if applicable): ------
+TYPE OF HTTP REQUEST: **POST**
+API ENDPOINT: **/add-one-user**
 
-RESPONSE DATA TYPE: ------
-RESPONSE: ------
+REQUEST BODY DATA TYPE (if applicable): **Object**
 
-❓ WHEN: ------
+REQUEST BODY (if applicable):
 
-❓ WHERE: ------
+* User information (name, email, favorite country, bio)
+
+RESPONSE DATA TYPE: **Object**
+
+RESPONSE:
+
+* The newly added user
+
+❓ WHEN:
+
+* When the user submits the form.
+
+❓ WHERE:
+
+* In the form component or the function that handles the form submission.
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
-Add more steps as needed!
-
-========================
-🔶 RETRIEVING FORM DATA
-========================
+Step 1: Create state to store the form input values.
+Step 2: Update the state as the user types into the form.
+Step 3: When the form is submitted, prevent the page from refreshing.
+Step 4: Send a POST request to **/add-one-user** with the form data in the request body.
+Step 5: Receive the newly created user from the response and update the UI if needed.
 
 ❓ WHAT...
-TYPE OF HTTP REQUEST (GET OR POST): ------
-API ENDPOINT: ------
 
-REQUEST BODY DATA TYPE (if applicable): ------
-REQUEST BODY (if applicable): ------
+TYPE OF HTTP REQUEST: **GET**
+API ENDPOINT: **/get-newest-user**
 
-RESPONSE DATA TYPE: ------
-RESPONSE: ------
+REQUEST BODY DATA TYPE (if applicable): **None**
 
-❓ WHEN: ------
+REQUEST BODY (if applicable): **None**
 
-❓ WHERE: ------
+RESPONSE DATA TYPE: **Object**
+
+RESPONSE:
+
+* The most recently added user
+
+❓ WHEN:
+
+* When the page loads.
+
+❓ WHERE:
+
+* In the component that displays the welcome message.
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
-Add more steps as needed!
-
-===================================
-📊 SAVED COUNTRIES DATA
-===================================
-
-========================
-🔶 STORING SAVED COUNTRIES DATA
-========================
+Step 1: Create state to store the newest user.
+Step 2: Use `useEffect` to run when the component loads.
+Step 3: Send a GET request to **/get-newest-user**.
+Step 4: Store the response in state.
+Step 5: Display the user's information in JSX.
 
 ❓ WHAT...
-TYPE OF HTTP REQUEST (GET OR POST): ------
-API ENDPOINT: ------
 
-REQUEST BODY DATA TYPE (if applicable): ------
-REQUEST BODY (if applicable): ------
+TYPE OF HTTP REQUEST: **POST**
+API ENDPOINT: **/save-one-country**
 
-RESPONSE DATA TYPE: ------
-RESPONSE: ------
+REQUEST BODY DATA TYPE (if applicable): **Object**
 
-❓ WHEN: ------
+REQUEST BODY (if applicable):
 
-❓ WHERE: ------
+* Country information (such as name, country code, flag, region, population, etc.)
+
+RESPONSE DATA TYPE: **Object**
+
+RESPONSE:
+
+* The saved country
+
+❓ WHEN:
+
+* When the user clicks the Save (heart) button for a country.
+
+❓ WHERE:
+
+* In the Country Card component or Country Details component.
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
-Add more steps as needed!
-
-========================
-🔶 RETRIEVING SAVED COUNTRIES DATA
-========================
+Step 1: Create a function to save a country.
+Step 2: Call the function when the Save button is clicked.
+Step 3: Send a POST request to **/save-one-country** with the country data.
+Step 4: Receive the saved country in the response.
+Step 5: Update the UI to show that the country has been saved.
 
 ❓ WHAT...
-TYPE OF HTTP REQUEST (GET OR POST): ------
-API ENDPOINT: ------
 
-REQUEST BODY DATA TYPE (if applicable): ------
-REQUEST BODY (if applicable): ------
+TYPE OF HTTP REQUEST: **GET**
+API ENDPOINT: **/get-all-saved-countries**
 
-RESPONSE DATA TYPE: ------
-RESPONSE: ------
+REQUEST BODY DATA TYPE (if applicable): **None**
 
-❓ WHEN: ------
+REQUEST BODY (if applicable): **None**
 
-❓ WHERE: ------
+RESPONSE DATA TYPE: **Array**
+
+RESPONSE:
+
+* An array of saved country objects
+
+❓ WHEN:
+
+* When the Saved Countries page loads.
+
+❓ WHERE:
+
+* In the Saved Countries page or component.
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
-Add more steps as needed!
-
-=================================
-📊 COUNTRY COUNTS DATA
-=================================
-
-========================
-🔶 STORING & RETRIEVING COUNTRY COUNTS DATA
-========================
-NOTE: We combine storing & retrieving country counts data into one section because they always happen together. Each time we look up a country’s view count, we also need to increase it and save the new total.
+Step 1: Create state to store the saved countries array.
+Step 2: Use `useEffect` to run when the page loads.
+Step 3: Send a GET request to **/get-all-saved-countries**.
+Step 4: Store the array in state.
+Step 5: Use `.map()` to display each saved country in JSX.
 
 ❓ WHAT...
-TYPE OF HTTP REQUEST (GET OR POST): ------
-API ENDPOINT: ------
 
-REQUEST BODY DATA TYPE (if applicable): ------
-REQUEST BODY (if applicable): ------
+TYPE OF HTTP REQUEST: **POST**
+API ENDPOINT: **/update-one-country-count**
 
-RESPONSE DATA TYPE: ------
-RESPONSE: ------
+REQUEST BODY DATA TYPE (if applicable): **Object**
 
-❓ WHEN: ------
+REQUEST BODY (if applicable):
 
-❓ WHERE: ------
+* The country's identifier (such as its country code or name)
+
+RESPONSE DATA TYPE: **Object**
+
+RESPONSE:
+
+* The country and its updated view count
+
+❓ WHEN:
+
+* When the user opens or selects a country's details page.
+
+❓ WHERE:
+
+* In the Country Details component or the function that runs when a country is selected.
 
 ❓ HOW:
-Step 1: ------
-Step 2: ------
-Step 3: ------
-Add more steps as needed!
+Step 1: Create a function to update the country's view count.
+Step 2: Call the function when the country details page opens.
+Step 3: Send a POST request to **/update-one-country-count** with the country's identifier.
+Step 4: The backend checks whether the country already has a view count.
+Step 5: If it exists, increase the count by 1. If it does not exist, create it with a count of 1.
+Step 6: Receive the updated count from the response.
+Step 7: Save the updated count in state.
+Step 8: Display the updated view count in the UI.

@@ -124,20 +124,3 @@ app.post("/api/update-one-country-count", async (req, res) => {
         )
     }
 });
-
-
-
-// 🔷 Build API Endpoints for Form data
-// POST /add-one-user: Save submitted form data
-// GET /get-newest-user: Return the form data if it exists
-// Test your API endpoints in Postman to make sure they're working
-// Test your API endpoints with your frontend
-// 🔷 Build API Endpoints for Saved Countries
-// POST /save-one-country: Save a country
-// GET /get-all-saved-countries: Return all saved countries
-// Test your API endpoints in Postman to make sure they're working
-// Test your API endpoints with your frontend
-// 🔷 Build API Endpoint for Country Count
-// POST /update-one-country-count: Increment the view count
-// Test your API endpoint in Postman to make sure they're working
-// Test your API endpoints with your frontend

@@ -36,10 +36,10 @@ function SavedCountries({ allCountries = [], savedCountries, setSavedCountries }
       });
   
     // Try to find the country in allCountries by name
-const matched = allCountries.find(c => c.name.common.toLowerCase() === form.country.toLowerCase());
+const matched = allCountries.find(c => c.name.toLowerCase() === form.country.toLowerCase());
 if (matched) {
     setSavedCountries((prev) => [...prev, {
-    name: matched.name.common,
+    name: matched.name,
     flag: matched.flags?.svg || matched.flags?.png
     }]);
 }

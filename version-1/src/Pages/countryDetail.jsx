@@ -13,7 +13,7 @@ function CountryDetail({ data, savedCountries, setSavedCountries }) {
   useEffect(() => {
     if (data.length > 0 && countryName) {
       const filteredCountry = data.find(
-        (country) => country.name.common === countryName,
+        (country) => country.name === countryName,
       );
       setCountry(filteredCountry);
     }
@@ -41,7 +41,7 @@ function CountryDetail({ data, savedCountries, setSavedCountries }) {
   const handleSave = () => {
     if (!country) return;
     let newCountry = {
-      name: country.name.common,
+      name: country.name,
       flag: country.flags?.svg || country.flags?.png,
     };
 

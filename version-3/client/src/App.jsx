@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React from "react"
+import  { useState, useEffect } from "react";
 import Home from "./Pages/home.jsx";
 import CountryDetail from "./Pages/countryDetail.jsx";
 import SavedCountries from "./Pages/savedCountries.jsx";
@@ -17,9 +18,10 @@ function App() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://restcountries.com/v3.1/all?fields=name,capital,population,region,currencies,borders,flags,cca3",
+          "https://countries.dev/countries"
         );
         const responseJson = await response.json();
+               console.log("Fetched response:", responseJson);
         responseJson ? setData(responseJson) : setData(localData);
       } catch (error) {
         console.error("Error fetching countries:", error);

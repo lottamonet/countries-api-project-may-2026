@@ -114,11 +114,11 @@ function SavedCountries({
     await saveUserInfo();
     const matched = allCountries.find(
       (country) =>
-        country.name.common.toLowerCase() === form.country_name.toLowerCase(),
+        country.name.toLowerCase() === form.country_name.toLowerCase(),
     );
 
     if (matched) {
-      await saveCountry(matched.name.common);
+      await saveCountry(matched.name);
     }
 
     // Reset form fields after submission
@@ -203,7 +203,7 @@ function SavedCountries({
 
           const matched = allCountries.find(
             (country) =>
-              country.name.common.toLowerCase() ===
+              country.name.toLowerCase() ===
               String(countryName).toLowerCase(),
           );
 
@@ -213,13 +213,13 @@ function SavedCountries({
                 <>
                   <img
                     src={matched.flags?.svg || matched.flags?.png}
-                    alt={`${matched.name.common} flag`}
+                    alt={`${matched.name} flag`}
                     width="40"
                   />
 
-                  <span>{matched.name.common}</span>
+                  <span>{matched.name}</span>
 
-                  <button onClick={() => unsaveCountry(matched.name.common)}>
+                  <button onClick={() => unsaveCountry(matched.name)}>
                     Unsave
                   </button>
                 </>

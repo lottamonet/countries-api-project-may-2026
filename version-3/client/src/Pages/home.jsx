@@ -8,11 +8,9 @@ function Home({ data }) {
 
   const regions = ["All", ...new Set(data.map((country) => country.region))];
   const filteredCountries = data.filter((country) => {
-    const matchesSearch = country.name.common
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-    const matchesRegion =
-      selectedRegion === "All" || country.region === selectedRegion;
+    const matchesSearch = country.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesRegion = selectedRegion === "All" || country.region === selectedRegion;
+
     return matchesSearch && matchesRegion;
   });
 

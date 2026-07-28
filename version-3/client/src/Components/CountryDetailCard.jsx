@@ -8,16 +8,16 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
   }
 
   const borderCountries = country.borders?.map((borderCode) => {
-    const match = allCountries.find((c) => c.cca3 === borderCode);
+    const match = allCountries.find((c) => c.alpha3Code === borderCode);
     return match
       ? (
         <div key={borderCode} className="border-country">
           <img
             src={match.flags?.svg || match.flags?.png}
-            alt={match.flags?.alt || `${match.name.common} flag`}
+            alt={match.flags?.alt || `${match.name} flag`}
             className="small-flag"
           />
-          <span>{match.name.common}</span>
+          <span>{match.name}</span>
         </div>
       )
       : null;
@@ -30,11 +30,11 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
       <div className="detail-card">
         <img src={country.flags?.svg || country.flags?.png} alt={country.flags?.alt || "Flag"}  className='detail-flag'/>
         <div className="detail-infoContainer">
-          <p className="detail-name">{country.name.common}</p>
-          <button onClick={() => handleSave(country.name.common)} className="heart-button">❤️ Save</button>
+          <p className="detail-name">{country.name}</p>
+          <button onClick={() => handleSave(country.name )} className="heart-button">❤️ Save</button>
           <p className="detail-population">Population: {country.population.toLocaleString()}</p>
           <p className="detail-region">Region: {country.region}</p>
-          <p className="detial-capital">Capital: {country.capital?.[0]}</p>
+          <p className="detial-capital">Capital: {country.capital}</p>
           <p className="detail-views">Views:{views}</p>
           {borderCountries && borderCountries.length > 0 && (
             <div id="borderingCountries">

@@ -25,7 +25,7 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
   return (
     <>
       <Link to="/" className="link">
-       <button>Back</button>
+       <button className="back-button">Back</button>
        </Link> 
       <div className="detail-card">
         <img src={country.flags?.svg || country.flags?.png} alt={country.flags?.alt || "Flag"}  className='detail-flag'/>
@@ -35,7 +35,7 @@ function CountryCardDetail({ country, allCountries, views, handleSave }) {
           <p className="detail-population">Population: {country.population.toLocaleString()}</p>
           <p className="detail-region">Region: {country.region}</p>
           <p className="detial-capital">Capital: {country.capital}</p>
-          <p className="detail-views">Views:{views}</p>
+          <p className="detail-views">Views: {views}</p>
           {borderCountries && borderCountries.length > 0 && (
             <div id="borderingCountries">
               <p>Bordering Countries:</p>

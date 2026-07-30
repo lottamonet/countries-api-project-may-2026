@@ -41,20 +41,21 @@ The Express API is deployed on Render:
 ## 🖼️ Screenshots
 
 ### Home Page — Light Mode
+<img width="1792" height="1120" alt="Screenshot 2026-07-29 at 11 20 31 PM" src="https://github.com/user-attachments/assets/4f45d457-1365-4928-ba5d-b0cc07138074" />
 
-<!-- Paste your light-mode home page screenshot here -->
 
 ### Home Page — Dark Mode
+<img width="1792" height="1120" alt="Screenshot 2026-07-29 at 11 20 35 PM" src="https://github.com/user-attachments/assets/c7cd849e-6c0b-4bfd-985d-aff6c9e0f633" />
 
-<!-- Paste your dark-mode home page screenshot here -->
 
 ### Country Detail Page
+<img width="1792" height="1120" alt="Screenshot 2026-07-29 at 11 20 42 PM" src="https://github.com/user-attachments/assets/7010122e-8fcc-4b74-8bfa-b0edc42eb8b2" />
 
-<!-- Paste your country detail screenshot here -->
 
 ### Saved Countries Page
 
-<!-- Paste your saved countries screenshot here -->
+<img width="1792" height="1120" alt="Screenshot 2026-07-29 at 11 20 22 PM" src="https://github.com/user-attachments/assets/07ec7386-0288-4667-bb26-52439575dfd0" />
+
 
 ---
 
@@ -494,9 +495,18 @@ In the future, I would like to:
 
 ## 🙌 Credits & Shoutouts
 
-
-- Phil and classmates for instruction, feedback, and support
-
+- [React](https://react.dev/)
+- [Vite](https://vite.dev/)
+- [React Router](https://reactrouter.com/)
+- [Express](https://expressjs.com/)
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Countries API](https://countries.dev/)
+- [Neon](https://neon.tech/)
+- [Render](https://render.com/)
+- [Netlify](https://www.netlify.com/)
+- AnnieCannons instructors and classmates for instruction, feedback, and support
+- ChatGPT for debugging support and helping me work through deployment issues
 
 ---
 

@@ -8,7 +8,7 @@ function Home({ data }) {
 
   const regions = ["All", ...new Set(data.map((country) => country.region))];
   const filteredCountries = data.filter((country) => {
-    const matchesSearch = country.name
+    const matchesSearch = country.name 
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
     const matchesRegion =

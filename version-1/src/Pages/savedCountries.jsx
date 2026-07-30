@@ -39,7 +39,7 @@ function SavedCountries({ allCountries = [], savedCountries, setSavedCountries }
 const matched = allCountries.find(c => c.name.toLowerCase() === form.country.toLowerCase());
 if (matched) {
     setSavedCountries((prev) => [...prev, {
-    name: matched.name,
+    name: matched.name ,
     flag: matched.flags?.svg || matched.flags?.png
     }]);
 }

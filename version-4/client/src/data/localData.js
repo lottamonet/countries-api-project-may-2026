@@ -1,4 +1,4 @@
-[
+export default [
     {
         "area": 652230,
         "cioc": "AFG",

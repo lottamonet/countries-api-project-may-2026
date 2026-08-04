@@ -4,6 +4,7 @@ import  { useState, useEffect } from "react";
 import Home from "./Pages/home.jsx";
 import CountryDetail from "./Pages/countryDetail.jsx";
 import SavedCountries from "./Pages/savedCountries.jsx";
+import Quiz from "./Pages/quiz.jsx";
 import localData from "./data/localData.js";
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
           <li className="saved">
             <Link to="/savedCountries">Saved Countries</Link>
           </li>
+          <li className="quiz">
+            <Link to="/quiz">Flag Quiz</Link>
+          </li>
         </ul>
       </nav>
       <button
@@ -75,6 +79,7 @@ function App() {
               />
             }
           />
+          <Route path="/quiz" element={<Quiz data={data} />} />
         </Routes>
       </div>
     </div>

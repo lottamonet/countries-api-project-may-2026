@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CardList from "../Components/CardList";
+import CountryOfTheDay from "../Components/CountryOfTheDay";
 import "../App.css";
 
 function Home({ data }) {
@@ -16,6 +17,7 @@ function Home({ data }) {
 
   return (
     <div id="home">
+      <CountryOfTheDay data={data} />
       <div className="filters">
         <div className="search-container">
           <input

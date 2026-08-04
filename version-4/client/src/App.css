@@ -39,6 +39,10 @@
   color: #ffffff;
 }
 
+.app.dark .quiz a  {
+  color: #ffffff;
+}
+
 .app.dark .region-header {
   color: #ffffff;
 }
